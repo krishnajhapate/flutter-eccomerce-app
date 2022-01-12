@@ -11,7 +11,11 @@ class LoginPage extends StatelessWidget {
       // ),
       body: Center(
         child: Container(
-          child: Text("Login Page "),
+          child: const Text(
+            "Login Page ",
+            style: const TextStyle(
+                fontSize: 20, color: Colors.blue, fontWeight: FontWeight.bold),
+          ),
         ),
       ),
       // drawer: Drawer(),
