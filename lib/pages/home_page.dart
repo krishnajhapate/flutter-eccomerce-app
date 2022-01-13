@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_catelog/models/catelog.dart';
 import 'package:flutter_catelog/widgets/MyDrawer.dart';
+import 'package:flutter_catelog/widgets/item_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    String name = "Krishna Jhapate";
-
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -15,12 +15,13 @@ class HomePage extends StatelessWidget {
           style: TextStyle(color: Colors.black),
         ),
       ),
-      body: Center(
-        child: Container(
-          child: Text("Hello $name "),
-        ),
+      body: ListView.builder(
+        itemCount: CatalogModel.items.length,
+        itemBuilder: (context, index) {
+          return ItemWidget(item: CatalogModel.items[index]);
+        },
       ),
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
     );
   }
 }
