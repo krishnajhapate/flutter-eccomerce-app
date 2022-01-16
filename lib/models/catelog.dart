@@ -2,15 +2,15 @@ import 'dart:convert';
 
 class CatalogModel {
   static List<Item> items = [
-    Item(
-      id: 1,
-      name: "iPhone 12 Pro",
-      desc: "Apple iPhone 12th generation",
-      price: 999,
-      color: "#33505a",
-      image:
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRISJ6msIu4AU9_M9ZnJVQVFmfuhfyJjEtbUm3ZK11_8IV9TV25-1uM5wHjiFNwKy99w0mR5Hk&usqp=CAc",
-    ),
+    // Item(
+    //   id: 1,
+    //   name: "iPhone 12 Pro",
+    //   desc: "Apple iPhone 12th generation",
+    //   price: 999,
+    //   color: "#33505a",
+    //   image:
+    //       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRISJ6msIu4AU9_M9ZnJVQVFmfuhfyJjEtbUm3ZK11_8IV9TV25-1uM5wHjiFNwKy99w0mR5Hk&usqp=CAc",
+    // ),
   ];
 }
 
@@ -57,7 +57,8 @@ class Item {
       'price': price,
       'color': color,
       'image': image,
-    };  }
+    };
+  }
 
   factory Item.fromMap(Map<String, dynamic> map) {
     return Item(
@@ -82,23 +83,23 @@ class Item {
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-  
+
     return other is Item &&
-      other.id == id &&
-      other.name == name &&
-      other.desc == desc &&
-      other.price == price &&
-      other.color == color &&
-      other.image == image;
+        other.id == id &&
+        other.name == name &&
+        other.desc == desc &&
+        other.price == price &&
+        other.color == color &&
+        other.image == image;
   }
 
   @override
   int get hashCode {
     return id.hashCode ^
-      name.hashCode ^
-      desc.hashCode ^
-      price.hashCode ^
-      color.hashCode ^
-      image.hashCode;
+        name.hashCode ^
+        desc.hashCode ^
+        price.hashCode ^
+        color.hashCode ^
+        image.hashCode;
   }
 }
