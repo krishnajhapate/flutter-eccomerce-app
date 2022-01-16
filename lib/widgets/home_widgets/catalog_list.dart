@@ -1,7 +1,6 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_catelog/models/catelog.dart';
+import 'package:flutter_catelog/pages/home_detail_page.dart';
 import 'package:flutter_catelog/widgets/home_widgets/catalog_image.dart';
 import 'package:flutter_catelog/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -16,7 +15,13 @@ class CatalogList extends StatelessWidget {
         itemCount: CatalogModel.items.length,
         itemBuilder: (context, index) {
           final catalog = CatalogModel.items[index];
-          return CatalogItems(catalog: catalog).expand();
+          return InkWell(
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomeDetailPage(catalog: catalog),
+                  )),
+              child: CatalogItems(catalog: catalog).expand());
         });
   }
 }
@@ -33,8 +38,11 @@ class CatalogItems extends StatelessWidget {
     return VxBox(
         child: Row(
       children: [
-        CatalogImage(
-          image: catalog.image,
+        Hero(
+          tag: catalog.id.toString(),
+          child: CatalogImage(
+            image: catalog.image,
+          ),
         ),
         Expanded(
             child: Column(
