@@ -4,8 +4,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_catelog/models/catelog.dart';
-import 'package:flutter_catelog/pages/home_widgets/catalog_header.dart';
-import 'package:flutter_catelog/pages/home_widgets/catalog_list.dart';
+import 'package:flutter_catelog/widgets/home_widgets/catalog_header.dart';
+import 'package:flutter_catelog/widgets/home_widgets/catalog_list.dart';
 import 'package:flutter_catelog/widgets/themes.dart';
 import 'dart:convert';
 import 'package:velocity_x/velocity_x.dart';
